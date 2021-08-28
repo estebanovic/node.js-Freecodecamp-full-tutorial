@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/estebanovic/node.js-Freecodecamp-full-tutorial/issues"
   },
-  "homepage": "https://github.com/estebanovic/node.js-Freecodecamp-full-tutorial#readme"
+  "homepage": "https://github.com/estebanovic/node.js-Freecodecamp-full-tutorial#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
 }
