@@ -11,7 +11,7 @@
 
 <body>
     <h1>Hello World!</h1>
-    <form action="/" method="POST">
+    <form action="/" method="POST" id="form">
         <div class="form-group">
             <label for="email">Email address:</label>
             <input type="email" name="email">
@@ -22,6 +22,27 @@
         </div>
         <button type="submit">submit</button>
     </form>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(()=>{
+            $("#form").submit((e)=>{
+                e.preventDefault();
+                $.ajax({
+                    url : '/',
+                    type : 'post',
+                    contentType : 'application/json',
+                    data : JSON.stringify($('#form').serializeArray()),
+                    success : (response) => {
+                        console.log('successfully response');
+                        console.log(response);
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
