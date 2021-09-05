@@ -6,36 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="public/css/index.css">
 </head>
 
 <body>
-    <h1>Hello World!</h1>
-    <form action="/" method="POST" id="form">
-        <div class="form-group">
-            <label for="email">Email address:</label>
-            <input type="email" name="email">
-        </div>
-        <div class="form-group">
-            <label for="pwd">Email address:</label>
-            <input type="password" name="pwd">
-        </div>
-        <button type="submit">submit</button>
-    </form>
-    <script
-    src="https://code.jquery.com/jquery-3.6.0.js"
-    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-    crossorigin="anonymous"></script>
+    <div class="container">
+        <h1>Hello World!</h1>
+        <form action="/" method="POST" id="form">
+            <div class="form-group">
+                <label for="email">Email address:</label>
+                <input type="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Email address:</label>
+                <input type="password" name="pwd">
+            </div>
+            <button type="submit" class="btn btn-primary">submit</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script>
-        $(document).ready(()=>{
-            $("#form").submit((e)=>{
+        $(document).ready(() => {
+            $("#form").submit((e) => {
                 e.preventDefault();
                 $.ajax({
-                    url : '/',
-                    type : 'post',
-                    contentType : 'application/json',
-                    data : JSON.stringify($('#form').serializeArray()),
-                    success : (response) => {
+                    url: '/',
+                    type: 'post',
+                    contentType: 'application/json',
+                    data: JSON.stringify($('#form').serializeArray()),
+                    success: (response) => {
                         console.log('successfully response');
                         console.log(response);
                     }
